@@ -1,5 +1,5 @@
 
-public class VirtualPet {
+public abstract class VirtualPet {
 
 	protected int health;
 	protected int happiness;
