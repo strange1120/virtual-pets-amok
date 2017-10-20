@@ -2,7 +2,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-public class VirtualPetShelter {
+public class VirtualPetShelter implements OrganicInterface, RobotInterface {
 
 	private Map<String, VirtualPet> pets = new HashMap<String, VirtualPet>();
 	
@@ -22,9 +22,44 @@ public class VirtualPetShelter {
 		pets.remove(name.toLowerCase());
 	}
 	
+//	public void feedOrganicPets() {
+//		for (VirtualPet feedOrganicPets : pets.values()) {
+//			feedOrganicPets.feed();
+//		}
+//	}
+//
+//	public void waterOrganicPets() {
+//		for (VirtualPet waterOrganicPets : pets.values()) {
+//			waterOrganicPets.water();
+//		}
+//	}
 	public void showPetStats() {
 		for(VirtualPet pet: pets.values()) {
 			System.out.println(pet);
 		}
 }
+
+	@Override
+	public void oilRobotPets() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void feed() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void clean() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void water() {
+		// TODO Auto-generated method stub
+		
+	}
 }

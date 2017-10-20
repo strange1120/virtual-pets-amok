@@ -1,20 +1,21 @@
+import java.util.Random;
 
 public abstract class VirtualPet {
+	
+	Random rand = new Random();
 
 	protected int health;
 	protected int happiness;
 	protected String name;
 	protected String description;
 	protected int boredom;
-	protected int cleanliness;
 
-	public VirtualPet(int health, int happiness, String name, String description, int boredom, int cleanliness) {
+	public VirtualPet(int health, int happiness, String name, String description, int boredom) {
 		this.health = health;
 		this.happiness = happiness;
 		this.name = name;
 		this.description = description;
 		this.boredom = boredom;
-		this.cleanliness = cleanliness;
 	}
 
 	public int getHealth() {
@@ -29,10 +30,6 @@ public abstract class VirtualPet {
 		return boredom;
 	}
 
-	public int getCleanliness() {
-		return cleanliness;
-	}
-
 	public String getName() {
 		return name;
 	}
@@ -41,11 +38,16 @@ public abstract class VirtualPet {
 		return description;
 	}
 	
+	protected int createRandomFrom1ToInt(int max) {
+		return rand.nextInt(max) + 1;
+	}
+	
 	@Override
 	public String toString() {
-		return "Name: " + name + "Health: " + health + "Happiness: " + happiness + "Boredom: " + boredom + "Cleanliness: " + cleanliness + 
+		return "Name: " + name + "Health: " + health + "Happiness: " + happiness + "Boredom: " + boredom + 
 				"\nDescription: " + description;
 	}
+
 	
 	
 	
