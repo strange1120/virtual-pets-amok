@@ -5,8 +5,6 @@ public class Dogs extends VirtualPet {
 		super(health, happiness, name, description, boredom, cleanliness);
 
 		public void walkAll() {
-			for (VirtualPet walkAll : pets.values()) {
-				;
 			}
 		
 		
