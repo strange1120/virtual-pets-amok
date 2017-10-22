@@ -1,14 +1,11 @@
 
 public class Dog extends VirtualPet {
 
-	public Dog(int health, int happiness, String name, String description, int boredom) {
-		super(health, happiness, name, description, boredom);
-
-//		public void walkAll() {
-//			}
-		
-		
-		
+	public Dog(String name, String description) {
+		super(name, description);
 	}
 
+	public void walk() {
+		happiness += 5;
+	}
 }

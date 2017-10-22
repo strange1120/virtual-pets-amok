@@ -1,9 +1,9 @@
 
-public class RobotDog extends Dog implements RobotInterface {
+public class RoboticCat extends VirtualPet implements RobotInterface {
 
-	protected int oilLevel;
+	private int oilLevel;
 
-	public RobotDog(String name, String description) {
+	public RoboticCat(String name, String description) {
 		super(name, description);
 		this.health = 35;
 		this.happiness = 35;
@@ -16,16 +16,11 @@ public class RobotDog extends Dog implements RobotInterface {
 	}
 
 	@Override
-	public void walk() {
-		happiness += 5;
-	}
-
-	@Override
 	public void oilRobotPets() {
 		oilLevel += createRandomFrom1ToInt(5);
 	}
 
-	@Override
+	// @Override
 	public void tick(int selection) {
 		super.tick(selection);
 		if (selection != 3) {
@@ -40,6 +35,6 @@ public class RobotDog extends Dog implements RobotInterface {
 	@Override
 	public String toString() {
 		return super.toString() + "\t  |" + oilLevel + "\t    |" + description;
-	}
 
+	}
 }

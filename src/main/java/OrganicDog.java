@@ -3,13 +3,16 @@ public class OrganicDog extends Dog implements OrganicInterface {
 
 	protected int hunger;
 	protected int thirst;
-	protected int cleanliness;
-	
-	public OrganicDog(int health, int happiness, String name, String description, int boredom) {
-		super(health, happiness, name, description, boredom);
+	protected int amountOfWaste;
+
+	public OrganicDog(String name, String description) {
+		super(name, description);
+		this.health = 35;
+		this.happiness = 35;
+		this.boredom = 35;
 		this.hunger = 35;
 		this.thirst = 35;
-		this.cleanliness = 35;	
+		this.amountOfWaste = 10;
 	}
 
 	public int getHunger() {
@@ -20,31 +23,55 @@ public class OrganicDog extends Dog implements OrganicInterface {
 		return thirst;
 	}
 
-	public int getCleanliness() {
-		return cleanliness;
-	}
-
-	public void setCleanliness(int cleanliness) {
-		this.cleanliness = 50;
+	public int getAmountOfWaste() {
+		return amountOfWaste;
 	}
 
 	@Override
 	public void feed() {
 		hunger += createRandomFrom1ToInt(5);
 		thirst -= createRandomFrom1ToInt(5);
-		cleanliness -= createRandomFrom1ToInt(5);
+		amountOfWaste += createRandomFrom1ToInt(4);
 	}
 
 	public void cleanCage() {
-		cleanliness = 50;
+		amountOfWaste = 0;
 	}
 
 	@Override
 	public void water() {
 		thirst += createRandomFrom1ToInt(5);
 		hunger -= createRandomFrom1ToInt(5);
-		cleanliness -= createRandomFrom1ToInt(5);
-		
+		amountOfWaste += createRandomFrom1ToInt(4);
+
 	}
-	
+
+	@Override
+	public void tick(int selection) {
+		super.tick(selection);
+		if (hunger < 25) {
+			health -= 3;
+		}
+		if (thirst < 25) {
+			health -= 3;
+		}
+		if (amountOfWaste > 25) {
+			health -= 3;
+		}
+		hunger -= 1;
+		thirst -= 1;
+		amountOfWaste += 1;
+	}
+
+	@Override
+	public void walk() {
+		super.walk();
+		amountOfWaste -= 5;
+	}
+
+	@Override
+	public String toString() {
+		return super.toString() + "\t  |" + hunger + "\t |" + thirst + "\t|" + amountOfWaste + "\t\t|" + description;
+	}
+
 }

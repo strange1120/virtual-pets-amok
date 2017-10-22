@@ -1,7 +1,7 @@
 import java.util.Random;
 
 public abstract class VirtualPet {
-	
+
 	Random rand = new Random();
 
 	protected int health;
@@ -10,12 +10,12 @@ public abstract class VirtualPet {
 	protected String description;
 	protected int boredom;
 
-	public VirtualPet(int health, int happiness, String name, String description, int boredom) {
-		this.health = health;
-		this.happiness = happiness;
+	public VirtualPet(String name, String description) {
+		this.health = 35;
+		this.happiness = 35;
 		this.name = name;
 		this.description = description;
-		this.boredom = boredom;
+		this.boredom = 35;
 	}
 
 	public int getHealth() {
@@ -37,23 +37,29 @@ public abstract class VirtualPet {
 	public String getDescription() {
 		return description;
 	}
-	
+
 	protected int createRandomFrom1ToInt(int max) {
 		return rand.nextInt(max) + 1;
 	}
-	
-	@Override
-	public String toString() {
-		return "Name: " + name + "Health: " + health + "Happiness: " + happiness + "Boredom: " + boredom + 
-				"\nDescription: " + description;
+
+	public void tick(int selection) {
+		if (health < 30) {
+			happiness -= 3;
+		}
+		boredom += 1;
+		health -= createRandomFrom1ToInt(2);
+		happiness -= createRandomFrom1ToInt(2);
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
+	public void play() {
+		boredom -= 5;
+		happiness += 3;
+	}
+
+	@Override
+	public String toString() {
+		return name + "\t|" + health + "\t|" + happiness + "\t  |" + boredom;
+
+	}
+
 }
