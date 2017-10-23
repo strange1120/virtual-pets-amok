@@ -22,6 +22,10 @@ public abstract class VirtualPet {
 		return health;
 	}
 
+	public void setHealth(int health) {
+		this.health = health;
+	}
+
 	public int getHappiness() {
 		return happiness;
 	}

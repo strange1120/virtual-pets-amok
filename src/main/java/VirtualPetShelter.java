@@ -58,7 +58,6 @@ public class VirtualPetShelter {
 			if (currentCat instanceof OrganicCat) {
 				litterBoxLevel += 2;
 			}
-
 		}
 	}
 
@@ -93,10 +92,17 @@ public class VirtualPetShelter {
 		if (litterBoxLevel > 50) {
 			litterBoxLevel = 50;
 		}
-		if (selection != 9) {
+		if (litterBoxLevel > 30) {
 			for (VirtualPet currentCat : virtualPets.values()) {
 				if (currentCat instanceof OrganicCat) {
-					litterBoxLevel += 2;
+					currentCat.setHealth(currentCat.getHealth() - 2);
+				}
+			}
+			if (selection != 9) {
+				for (VirtualPet currentCat : virtualPets.values()) {
+					if (currentCat instanceof OrganicCat) {
+						litterBoxLevel += 2;
+					}
 				}
 			}
 		}
