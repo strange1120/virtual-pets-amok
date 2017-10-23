@@ -1,9 +1,9 @@
 
 public class OrganicDog extends Dog implements OrganicInterface {
 
-	protected int hunger;
-	protected int thirst;
-	protected int amountOfWaste;
+	private int hunger;
+	private int thirst;
+	private int amountOfWaste;
 
 	public OrganicDog(String name, String description) {
 		super(name, description);

@@ -1,7 +1,7 @@
 
 public class RobotDog extends Dog implements RobotInterface {
 
-	protected int oilLevel;
+	private int oilLevel;
 
 	public RobotDog(String name, String description) {
 		super(name, description);
