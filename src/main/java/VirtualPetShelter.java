@@ -124,7 +124,7 @@ public class VirtualPetShelter {
 			}
 		}
 		System.out.println("------------" + "\nOrganic Dogs\n" + "------------"
-				+ "\nName\t|Health\t|Happiness|Boredom|Hunger|Thirst|Amount of Waste|Description");
+				+ "\nName\t|Health\t|Happiness|Boredom|Hunger|Thirst|Waste in Cage|Description");
 		for (VirtualPet currentOrgDog : virtualPets.values()) {
 			if (currentOrgDog instanceof OrganicDog) {
 				System.out.println(currentOrgDog);
