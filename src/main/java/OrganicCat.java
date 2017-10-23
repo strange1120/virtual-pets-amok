@@ -27,11 +27,27 @@ public class OrganicCat extends VirtualPet implements OrganicInterface {
 		if (hunger < 25) {
 			health -= 3;
 		}
+		if (selection != 1) {
+			hunger -= createRandomFrom1ToInt(2);
+		}
+		if (selection != 2) {
+			thirst -= createRandomFrom1ToInt(2);
+		}
 		if (thirst < 25) {
 			health -= 3;
 		}
-		hunger -= 1;
-		thirst -= 1;
+		if (hunger < 0) {
+			hunger = 0;
+		}
+		if (hunger > 50) {
+			hunger = 50;
+		}
+		if (thirst < 0) {
+			thirst = 0;
+		}
+		if (thirst > 50) {
+			thirst = 50;
+		}
 	}
 
 	@Override
@@ -48,7 +64,8 @@ public class OrganicCat extends VirtualPet implements OrganicInterface {
 
 	@Override
 	public String toString() {
-		return super.toString() + "\t  |" + hunger + "\t |" + thirst + "\t|" + description;
+		return super.toString() + "\t  |" + hunger + "\t |" + thirst + "\t|" + description.substring(0, 1).toUpperCase()
+				+ description.substring(1).toLowerCase();
 	}
 
 }

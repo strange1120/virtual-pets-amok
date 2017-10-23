@@ -44,9 +44,32 @@ public abstract class VirtualPet {
 
 	public void tick(int selection) {
 		if (health < 30) {
-			happiness -= 3;
+			happiness -= 2;
 		}
-		boredom += 1;
+		if (boredom < 30) {
+			happiness -= 2;
+		}
+		if (boredom < 0) {
+			boredom = 0;
+		}
+		if (boredom > 50) {
+			boredom = 50;
+		}
+		if (health > 50) {
+			health = 50;
+		}
+		if (health < 0) {
+			health = 0;
+		}
+		if (happiness > 50) {
+			happiness = 50;
+		}
+		if (happiness < 0) {
+			happiness = 0;
+		}
+		if (selection != 4) {
+			boredom += createRandomFrom1ToInt(2);
+		}
 		health -= createRandomFrom1ToInt(2);
 		happiness -= createRandomFrom1ToInt(2);
 	}
@@ -58,7 +81,8 @@ public abstract class VirtualPet {
 
 	@Override
 	public String toString() {
-		return name + "\t|" + health + "\t|" + happiness + "\t  |" + boredom;
+		return name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase() + "\t|" + health + "\t|" + happiness
+				+ "\t  |" + boredom;
 
 	}
 

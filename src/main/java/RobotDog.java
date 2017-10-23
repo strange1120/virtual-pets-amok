@@ -29,17 +29,23 @@ public class RobotDog extends Dog implements RobotInterface {
 	public void tick(int selection) {
 		super.tick(selection);
 		if (selection != 3) {
-			oilLevel -= 2;
+			oilLevel -= createRandomFrom1ToInt(2);
 		}
 		if (oilLevel < 25) {
-			health -= 5;
+			health -= 3;
 		}
-		oilLevel -= 1;
+		if (oilLevel > 50) {
+			oilLevel = 50;
+		}
+		if (oilLevel < 0) {
+			oilLevel = 0;
+		}
 	}
 
 	@Override
 	public String toString() {
-		return super.toString() + "\t  |" + oilLevel + "\t    |" + description;
+		return super.toString() + "\t  |" + oilLevel + "\t    |" + description.substring(0, 1).toUpperCase()
+				+ description.substring(1).toLowerCase();
 	}
 
 }

@@ -6,18 +6,6 @@ import org.junit.Test;
 public class VirtualPetTest {
 
 	@Test
-	public void shouldBeAbleToCreateADogObject() {
-		Dog underTest = new Dog("", "");
-		assertNotNull(underTest);
-	}
-
-	@Test
-	public void assertThatDogIsAVirtualPet() {
-		VirtualPet underTest = new Dog("", "");
-		assertNotNull(underTest);
-	}
-
-	@Test
 	public void assertThatOrganicDogIsADog() {
 		Dog underTest = new OrganicDog("", "");
 		assertNotNull(underTest);
@@ -31,7 +19,7 @@ public class VirtualPetTest {
 
 	@Test
 	public void assertThatRobotCatIsAVirtualPet() {
-		VirtualPet underTest = new RoboticCat("", "");
+		VirtualPet underTest = new RobotCat("", "");
 		assertNotNull(underTest);
 	}
 
@@ -121,7 +109,7 @@ public class VirtualPetTest {
 	@Test
 	public void assertThatOilAllRobotsWorks() {
 		VirtualPetShelter underTest = new VirtualPetShelter();
-		underTest.addPet(new RoboticCat("a", ""));
+		underTest.addPet(new RobotCat("a", ""));
 		underTest.addPet(new RobotDog("a", ""));
 		underTest.oilAllRobotPets();
 		assertNotNull(underTest);
