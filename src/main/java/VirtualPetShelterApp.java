@@ -98,7 +98,6 @@ public class VirtualPetShelterApp {
 			menu();
 			selection = input.nextInt();
 			selection = selectionParameters(input, virtualPet, selection);
-
 		}
 	}
 
