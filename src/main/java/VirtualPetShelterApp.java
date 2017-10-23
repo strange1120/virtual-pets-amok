@@ -95,7 +95,7 @@ public class VirtualPetShelterApp {
 				virtualPet.cleanLitterBox();
 			}
 			if (selection == 10) {
-				System.out.println("Thanks for stopping by the Virtual Pet Shelter.");
+				System.out.println("Thanks for stopping by Haus of Strange Virtual Pets!");
 				System.exit(0);
 			}
 			virtualPet.tickAll(selection);
