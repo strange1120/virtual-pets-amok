@@ -20,12 +20,7 @@ public class VirtualPetShelterApp {
 		virtualPet.showPetStats();
 		menu();
 		int selection = input.nextInt();
-		while (selection < 1 || selection > 10) {
-			System.out.println("You have entered an invalid choice.");
-			virtualPet.showPetStats();
-			menu();
-			selection = input.nextInt();
-		}
+		selection = selectionParameters(input, virtualPet, selection);
 
 		while (selection >= 1 && selection <= 10) {
 			if (selection == 1) {
@@ -102,7 +97,19 @@ public class VirtualPetShelterApp {
 			virtualPet.showPetStats();
 			menu();
 			selection = input.nextInt();
+			selection = selectionParameters(input, virtualPet, selection);
+
 		}
+	}
+
+	public static int selectionParameters(Scanner input, VirtualPetShelter virtualPet, int selection) {
+		while (selection < 1 || selection > 10) {
+			System.out.println("You have entered an invalid choice.");
+			virtualPet.showPetStats();
+			menu();
+			selection = input.nextInt();
+		}
+		return selection;
 	}
 
 	public static void menu() {
