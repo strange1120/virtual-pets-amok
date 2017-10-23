@@ -76,11 +76,22 @@ public class VirtualPetShelter {
 				((OrganicInterface) current).water();
 			}
 		}
+		for (VirtualPet currentCat : virtualPets.values()) {
+			if (currentCat instanceof OrganicCat) {
+				litterBoxLevel += 2;
+			}
+		}
 	}
 
 	public void tickAll(int selection) {
 		for (VirtualPet current : virtualPets.values()) {
 			current.tick(selection);
+		}
+		if (litterBoxLevel < 0) {
+			litterBoxLevel = 0;
+		}
+		if (litterBoxLevel > 50) {
+			litterBoxLevel = 50;
 		}
 		if (selection != 9) {
 			for (VirtualPet currentCat : virtualPets.values()) {
