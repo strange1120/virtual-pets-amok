@@ -106,7 +106,7 @@ public class VirtualPetShelterApp {
 	}
 
 	public static void menu() {
-		System.out.println("What would you like to do next? " + "\n1. Feed the organic virtualPets."
+		System.out.println("\nWhat would you like to do next? " + "\n1. Feed the organic virtualPets."
 				+ "\n2. Refill water for the organic virtualPets." + "\n3. Oil the robotic virtualPets."
 				+ "\n4. Play with a pet" + "\n5. Adopt a pet" + "\n6. Admit a pet" + "\n7. Clean the dogs cages"
 				+ "\n8. Walk the dogs" + "\n9. Clean the litter box" + "\n10. Quit");
