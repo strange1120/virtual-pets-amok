@@ -5,9 +5,6 @@ public class RobotDog extends Dog implements RobotInterface {
 
 	public RobotDog(String name, String description) {
 		super(name, description);
-		this.health = 35;
-		this.happiness = 35;
-		this.boredom = 35;
 		this.oilLevel = 35;
 	}
 

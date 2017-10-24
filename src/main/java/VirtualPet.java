@@ -34,6 +34,14 @@ public abstract class VirtualPet {
 		return boredom;
 	}
 
+	public void setHappiness(int happiness) {
+		this.happiness = happiness;
+	}
+
+	public void setBoredom(int boredom) {
+		this.boredom = boredom;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -50,26 +58,8 @@ public abstract class VirtualPet {
 		if (health < 30) {
 			happiness -= 2;
 		}
-		if (boredom < 30) {
+		if (boredom > 30) {
 			happiness -= 2;
-		}
-		if (boredom < 0) {
-			boredom = 0;
-		}
-		if (boredom > 50) {
-			boredom = 50;
-		}
-		if (health > 50) {
-			health = 50;
-		}
-		if (health < 0) {
-			health = 0;
-		}
-		if (happiness > 50) {
-			happiness = 50;
-		}
-		if (happiness < 0) {
-			happiness = 0;
 		}
 		if (selection != 4) {
 			boredom += createRandomFrom1ToInt(2);

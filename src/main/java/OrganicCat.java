@@ -6,9 +6,6 @@ public class OrganicCat extends VirtualPet implements OrganicInterface {
 
 	public OrganicCat(String name, String description) {
 		super(name, description);
-		this.health = 35;
-		this.happiness = 35;
-		this.boredom = 35;
 		this.hunger = 35;
 		this.thirst = 35;
 	}

@@ -5,9 +5,6 @@ public class RobotCat extends VirtualPet implements RobotInterface {
 
 	public RobotCat(String name, String description) {
 		super(name, description);
-		this.health = 35;
-		this.happiness = 35;
-		this.boredom = 35;
 		this.oilLevel = 35;
 	}
 
@@ -28,6 +25,12 @@ public class RobotCat extends VirtualPet implements RobotInterface {
 		}
 		if (oilLevel < 25) {
 			health -= 3;
+		}
+		if (oilLevel < 0) {
+			oilLevel = 0;
+		}
+		if (oilLevel > 50) {
+			oilLevel = 50;
 		}
 	}
 
