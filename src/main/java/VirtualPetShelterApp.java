@@ -112,10 +112,10 @@ public class VirtualPetShelterApp {
 	}
 
 	public static void menu() {
-		System.out.println("\nWhat would you like to do next? " + "\n1. Feed the organic virtualPets."
-				+ "\n2. Refill water for the organic virtualPets." + "\n3. Oil the robotic virtualPets."
-				+ "\n4. Play with a pet" + "\n5. Adopt a pet" + "\n6. Admit a pet" + "\n7. Clean the dogs cages"
-				+ "\n8. Walk the dogs" + "\n9. Clean the litter box" + "\n10. Quit");
+		System.out.println("\nWhat would you like to do next? " + "\n1. Feed the organic pets."
+				+ "\n2. Refill water for the organic pets." + "\n3. Oil the robotic pets." + "\n4. Play with a pet"
+				+ "\n5. Adopt a pet" + "\n6. Admit a pet" + "\n7. Clean the dogs cages" + "\n8. Walk the dogs"
+				+ "\n9. Clean the litter box" + "\n10. Quit");
 	}
 
 	public static String nameMatch(Scanner input, VirtualPetShelter virtualPet) {
