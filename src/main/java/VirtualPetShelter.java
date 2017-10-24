@@ -1,8 +1,6 @@
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 public class VirtualPetShelter {
 
@@ -82,17 +80,6 @@ public class VirtualPetShelter {
 				litterBoxLevel += 2;
 			}
 		}
-	}
-
-	public void checkForDead() {
-		Set<String> set = new HashSet<>();
-		for (VirtualPet current : virtualPets.values()) {
-			if (current.getHealth() <= 0) {
-				set.add(current.getName());
-				System.out.println(current.getName() + " has died.\n");
-			}
-		}
-		virtualPets.keySet().removeAll(set);
 	}
 
 	public void tickAll(int selection) {
