@@ -94,7 +94,6 @@ public class VirtualPetShelterApp {
 				System.exit(0);
 			}
 			virtualPet.tickAll(selection);
-			virtualPet.checkForDead();
 			virtualPet.showPetStats();
 			menu();
 			selection = input.nextInt();
