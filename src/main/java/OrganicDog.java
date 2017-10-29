@@ -95,7 +95,7 @@ public class OrganicDog extends Dog implements OrganicInterface {
 
 	@Override
 	public String toString() {
-		return super.toString() + "\t  |" + hunger + "\t |" + thirst + "\t|" + amountOfWaste + "\t\t|"
+		return super.toString() + "\t  |" + hunger + "\t |" + thirst + "\t|" + amountOfWaste + "\t      |"
 				+ description.substring(0, 1).toUpperCase() + description.substring(1).toLowerCase();
 	}
 
